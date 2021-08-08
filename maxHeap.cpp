@@ -27,7 +27,7 @@ int maxHeap::parentIndex(int child)
         return parent;
 }
 
-//after inserting, we heapifyup from where that new inserted player ended up
+//after inserting, we heapifyup from where that new node ended up
 //compares current node to parent and swaps the smaller to the top
 //recursive function, each swap means we call heapifyup on the next higher level
 //where we swapped a value
@@ -35,7 +35,7 @@ void maxHeap::heapifyup(int index)
 {
     //IF index is not the root(top of the tree)
     //AND parent index within heap bounds (not negative)
-    //AND current nodes rank less then parent nodes rank
+    //AND current nodes rank less then parent nodes number
     if (index >= 0 && parentIndex(index) >= 0 && heap[index].num > heap[parentIndex(index)].num) {
         //if so, swap values between current node and parent
         node temp = heap[index];
